@@ -540,9 +540,6 @@ namespace Lab_11___Calculator
         }
 
         #endregion
-
-        private Button plusMinus;
-        private Button decimalPoint;
         private Button zero;
         private Button backSpace;
         private Button three;
@@ -567,5 +564,7 @@ namespace Lab_11___Calculator
         public Button squareRoot;
         public Button square;
         public Button reciprocal;
+        public Button plusMinus;
+        public Button decimalPoint;
     }
 }

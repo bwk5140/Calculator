@@ -39,15 +39,26 @@ namespace Lab_11___Calculator
                 if (entryVal2 < 0)
                 {
                     calculator.entryDisplay.Text = "Invalid input";
+                    calculator.division.Enabled = false;
+                    calculator.reciprocal.Enabled = false;
+                    calculator.square.Enabled = false;
+                    calculator.squareRoot.Enabled = false;
+                    calculator.multiplication.Enabled = false;
+                    calculator.addition.Enabled = false;
+                    calculator.subtraction.Enabled = false;
+                    calculator.plusMinus.Enabled = false;
+                    calculator.decimalPoint.Enabled = false;
+
+                    Enter();
+                    return calculator.operand1State;
                 }
                 else
                 {
                     entryVal2 = previousOperator.Calculate(entryVal1, entryVal2);
                     calculator.entryDisplay.Text = "" + entryVal2;
+                    Enter();
+                    return calculator.operand2State;
                 }
-
-                Enter();
-                return calculator.operand2State;
             }
             else if (previousOperator == calculator.square_)
             {
@@ -76,21 +87,32 @@ namespace Lab_11___Calculator
             }
             else if (previousOperator == calculator.reciprocal_)
             {
-                if (entryVal2 == 0)
+                if (entryVal1 == 0)
                 {
-                    calculator.operandsDisplay.Text = "(1/" + entryVal2 + ")";
+                    calculator.operandsDisplay.Text = "(1/" + entryVal1 + ")";
                     calculator.entryDisplay.Text = "Cannot divide by zero";
+                    calculator.division.Enabled = false;
+                    calculator.reciprocal.Enabled = false;
+                    calculator.square.Enabled = false;
+                    calculator.squareRoot.Enabled = false;
+                    calculator.multiplication.Enabled = false;
+                    calculator.addition.Enabled = false;
+                    calculator.subtraction.Enabled = false;
+                    calculator.plusMinus.Enabled = false;
+                    calculator.decimalPoint.Enabled = false;
+
+                    Enter();
+                    return calculator.operand1State;
                 }
                 else
                 {
                     calculator.operandsDisplay.Text += " (1/" + entryVal1 + ")";
                     entryVal2 = previousOperator.Calculate(entryVal1, entryVal2);
                     calculator.entryDisplay.Text = "" + entryVal2;
+                    Enter();
+                    return calculator.operand2State;
                 }
 
-                Enter();
-
-                return calculator.operand2State;
             }
             else if (previousOperator == calculator.clearAllOperator)
             {
@@ -99,6 +121,15 @@ namespace Lab_11___Calculator
                 entry = "";
                 entryVal1 = 0;
                 entryVal2 = 0;
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
 
                 Enter();
 
@@ -109,6 +140,15 @@ namespace Lab_11___Calculator
                 calculator.entryDisplay.Text = "0";
                 entry = "";
                 entryVal2 = 0;
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
 
                 Enter();
 
@@ -116,17 +156,18 @@ namespace Lab_11___Calculator
             }
             else if (previousOperator == calculator.backspaceOperator)
             {
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
                 return this;
             }
-            else if ((operator_ == calculator.divide && entryVal2 == 0))
-            {
-                calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
-                calculator.entryDisplay.Text = "Cannot divide by zero";
-                
-                Enter();
-
-                return this;
-            }
+            
             else
             {
                 operator_ = oprtr;
@@ -134,7 +175,6 @@ namespace Lab_11___Calculator
                 calculator.entryDisplay.Text = "" + entryVal1;
 
                 Enter();
-
                 return this;
             }  
         }
@@ -143,22 +183,21 @@ namespace Lab_11___Calculator
         {
             calculator.prevState = this;
 
-            if (operator_ == calculator.divide && entryVal2 == 0)
+            if ((operator_ == calculator.divide && entryVal2 == 0))
             {
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "Cannot divide by zero";
-            }
-            else if ((operator_ == calculator.square_root && entryVal2 < 0))
-            {
-                calculator.operandsDisplay.Text = entryVal2 + " " + operator_.getSymbol();
-                calculator.entryDisplay.Text = "Invalid input";
-                operator_ = new NullOperator();
-            }
-            else if ((operator_ == calculator.reciprocal_ && entryVal2 == 0))
-            {
-                calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
-                calculator.entryDisplay.Text = "Cannot divide by zero";
-                operator_ = new NullOperator();
+                calculator.division.Enabled = false;
+                calculator.reciprocal.Enabled = false;
+                calculator.square.Enabled = false;
+                calculator.squareRoot.Enabled = false;
+                calculator.multiplication.Enabled = false;
+                calculator.addition.Enabled = false;
+                calculator.subtraction.Enabled = false;
+                calculator.plusMinus.Enabled = false;
+                calculator.decimalPoint.Enabled = false;
+                Enter();
+                return calculator.operand1State;
             }
             else
             {
@@ -166,11 +205,9 @@ namespace Lab_11___Calculator
                 + " " + entryVal2 + " =";
                 entryVal1 = operator_.Calculate(entryVal1, entryVal2);
                 calculator.entryDisplay.Text = "" + entryVal1;
+                Enter();
+                return calculator.equalState;
             }
-
-            Enter();
-
-            return calculator.equalState;
         }
 
         public override void Enter()

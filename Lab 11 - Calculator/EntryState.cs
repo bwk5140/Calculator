@@ -75,8 +75,17 @@ namespace Lab_11___Calculator
             }
             else if (operator_ == calculator.reciprocal_)
             {
-                calculator.operandsDisplay.Text = "1/" + entryVal1;
+                calculator.operandsDisplay.Text = " (1/" + entryVal1 + ")";
                 calculator.entryDisplay.Text = "Cannot divide by zero";
+                calculator.division.Enabled = false;
+                calculator.reciprocal.Enabled = false;
+                calculator.square.Enabled = false;
+                calculator.squareRoot.Enabled = false;
+                calculator.multiplication.Enabled = false;
+                calculator.addition.Enabled = false;
+                calculator.subtraction.Enabled = false;
+                calculator.plusMinus.Enabled = false;
+                calculator.decimalPoint.Enabled = false;
 
                 Enter();
 
@@ -89,6 +98,15 @@ namespace Lab_11___Calculator
                 entry = "";
                 entryVal1 = 0;
                 entryVal2 = 0;
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
 
                 Enter();
 
@@ -99,6 +117,15 @@ namespace Lab_11___Calculator
                 calculator.entryDisplay.Text = "0";
                 entry = "";
                 entryVal2 = 0;
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
 
                 Enter();
 
@@ -110,6 +137,16 @@ namespace Lab_11___Calculator
                 delete = calculator.entryDisplay.Text.Remove(calculator.entryDisplay.Text.Length - 1);
                 entry = delete;
                 entryVal2 = double.Parse(entry);
+
+                calculator.division.Enabled = true;
+                calculator.reciprocal.Enabled = true;
+                calculator.square.Enabled = true;
+                calculator.squareRoot.Enabled = true;
+                calculator.multiplication.Enabled = true;
+                calculator.addition.Enabled = true;
+                calculator.subtraction.Enabled = true;
+                calculator.plusMinus.Enabled = true;
+                calculator.decimalPoint.Enabled = true;
 
                 Enter();
 
