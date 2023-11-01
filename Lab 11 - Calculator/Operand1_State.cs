@@ -23,7 +23,7 @@ namespace Lab_11___Calculator
                 calculator.plusMinus.Enabled = true;
                 calculator.decimalPoint.Enabled = true;
             }
-            if (entryVal2 == 0 && char.IsDigit(val) &&
+            if (entryVal1 == 0 && char.IsDigit(val) &&
                             !calculator.entryDisplay.Text.Contains("."))
             {
                 entry = "" + val;

@@ -35,8 +35,8 @@ namespace Lab_11___Calculator
 
             if (previousOperator == calculator.square_root)
             {
-                calculator.operandsDisplay.Text += previousOperator.getSymbol() + " (" + entryVal1 + ")";
-                if (entryVal1 < 0)
+                calculator.operandsDisplay.Text += previousOperator.getSymbol() + " (" + entryVal2 + ")";
+                if (entryVal2 < 0)
                 {
                     calculator.entryDisplay.Text = "Invalid input";
                     calculator.division.Enabled = false;
@@ -54,15 +54,15 @@ namespace Lab_11___Calculator
                 }
                 else
                 {
-                    entryVal1 = previousOperator.Calculate(entryVal1, entryVal2);
-                    calculator.entryDisplay.Text = "" + entryVal1;
+                    entryVal2 = previousOperator.Calculate(entryVal2, entryVal1);
+                    calculator.entryDisplay.Text = "" + entryVal2;
                     Enter();
                     return calculator.operand2State;
                 }
             }
             else if (previousOperator == calculator.square_)
             {
-                calculator.operandsDisplay.Text += "("+ entryVal1 + ")" + previousOperator.getSymbol();
+                calculator.operandsDisplay.Text += "(" + entryVal1 + ")" + previousOperator.getSymbol();
                 entryVal2 = previousOperator.Calculate(entryVal1, entryVal2);
                 calculator.entryDisplay.Text = "" + entryVal2;
 
@@ -167,16 +167,16 @@ namespace Lab_11___Calculator
                 calculator.decimalPoint.Enabled = true;
                 return this;
             }
-            
             else
             {
                 operator_ = oprtr;
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "" + entryVal1;
+            }
+            
+            Enter();
+            return this;
 
-                Enter();
-                return this;
-            }  
         }
 
         public override State NextEntryState(Equals equals)

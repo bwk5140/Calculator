@@ -223,6 +223,7 @@ namespace Lab_11___Calculator
                 operator_ = oprtr;
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "" + entryVal1;
+                entryVal2 = entryVal1;
 
                 Enter();
                 return calculator.operatorState;
