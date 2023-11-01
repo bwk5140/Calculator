@@ -99,7 +99,7 @@ namespace Lab_11___Calculator
             {
                 if (entryVal1 == 0)
                 {
-                    calculator.operandsDisplay.Text = " (1/" + entryVal1 + ")";
+                    calculator.operandsDisplay.Text = " 1/(" + entryVal1 + ")";
                     calculator.entryDisplay.Text = "Cannot divide by zero";
                     calculator.division.Enabled = false;
                     calculator.reciprocal.Enabled = false;
@@ -113,7 +113,7 @@ namespace Lab_11___Calculator
                 }
                 else
                 {
-                    calculator.operandsDisplay.Text = " (1/" + entryVal1 + ")";
+                    calculator.operandsDisplay.Text = " 1/(" + entryVal1 + ")";
                     entryVal1 = operator_.Calculate(entryVal1, entryVal2);
                     calculator.entryDisplay.Text = "" + entryVal1;
                     entryVal2 = entryVal1;

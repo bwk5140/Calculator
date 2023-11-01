@@ -155,20 +155,5 @@ namespace Lab_11___Calculator
         {
             nextState = nextState.NextEntryState(backspaceOperator);
         }
-
-        private void emptyButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void entryDisplay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void operandsDisplay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

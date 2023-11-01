@@ -493,7 +493,6 @@ namespace Lab_11___Calculator
             this.entryDisplay.TabIndex = 23;
             this.entryDisplay.Text = "0";
             this.entryDisplay.WordWrap = false;
-            this.entryDisplay.TextChanged += new System.EventHandler(this.entryDisplay_TextChanged);
             // 
             // operandsDisplay
             // 
@@ -509,7 +508,6 @@ namespace Lab_11___Calculator
             this.operandsDisplay.Size = new System.Drawing.Size(391, 24);
             this.operandsDisplay.TabIndex = 24;
             this.operandsDisplay.Text = "";
-            this.operandsDisplay.TextChanged += new System.EventHandler(this.operandsDisplay_TextChanged);
             // 
             // emptyButton1
             // 
@@ -517,6 +515,7 @@ namespace Lab_11___Calculator
             this.emptyButton1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.emptyButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.emptyButton1.BackColor = System.Drawing.SystemColors.Window;
+            this.emptyButton1.Enabled = false;
             this.emptyButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.emptyButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.emptyButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -527,7 +526,6 @@ namespace Lab_11___Calculator
             this.emptyButton1.Size = new System.Drawing.Size(92, 50);
             this.emptyButton1.TabIndex = 25;
             this.emptyButton1.UseVisualStyleBackColor = false;
-            this.emptyButton1.Click += new System.EventHandler(this.emptyButton1_Click);
             // 
             // clearEntry
             // 
