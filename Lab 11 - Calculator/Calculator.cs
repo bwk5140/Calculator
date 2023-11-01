@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Lab_11___Calculator
@@ -153,6 +154,21 @@ namespace Lab_11___Calculator
         private void Backspace_clicked(object sender, EventArgs e)
         {
             nextState = nextState.NextEntryState(backspaceOperator);
+        }
+
+        private void emptyButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void entryDisplay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void operandsDisplay_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

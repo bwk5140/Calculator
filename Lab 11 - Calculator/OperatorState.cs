@@ -36,7 +36,7 @@ namespace Lab_11___Calculator
             if (previousOperator == calculator.square_root)
             {
                 calculator.operandsDisplay.Text += previousOperator.getSymbol() + " (" + entryVal1 + ")";
-                if (entryVal2 < 0)
+                if (entryVal1 < 0)
                 {
                     calculator.entryDisplay.Text = "Invalid input";
                     calculator.division.Enabled = false;
@@ -54,8 +54,8 @@ namespace Lab_11___Calculator
                 }
                 else
                 {
-                    entryVal2 = previousOperator.Calculate(entryVal1, entryVal2);
-                    calculator.entryDisplay.Text = "" + entryVal2;
+                    entryVal1 = previousOperator.Calculate(entryVal1, entryVal2);
+                    calculator.entryDisplay.Text = "" + entryVal1;
                     Enter();
                     return calculator.operand2State;
                 }

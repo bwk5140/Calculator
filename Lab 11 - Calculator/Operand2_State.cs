@@ -58,16 +58,15 @@ namespace Lab_11___Calculator
                 {
                     entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                     calculator.entryDisplay.Text = "" + entryVal2;
-                }
 
-                Enter();
-
-                return this;
+                    Enter();
+                    return this;
+                }     
             }
             else if (nextOperator == calculator.square_)
             {
                 calculator.operandsDisplay.Text += " (" + entryVal2 + ")" + nextOperator.getSymbol();
-                entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
+                entryVal2 = nextOperator.Calculate(entryVal1, entryVal2);
                 calculator.entryDisplay.Text = "" + entryVal2;
 
                 Enter();
@@ -107,11 +106,12 @@ namespace Lab_11___Calculator
                     calculator.operandsDisplay.Text += " (1/" + entryVal2 + ")";
                     entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                     calculator.entryDisplay.Text = "" + entryVal2;
+
+                    Enter();
+
+                    return this;
                 }
-
-                Enter();
-
-                return this;
+             
             }
             else if (nextOperator == calculator.clearAllOperator)
             {
@@ -222,13 +222,11 @@ namespace Lab_11___Calculator
                 entryVal1 = operator_.Calculate(entryVal1, entryVal2);
                 operator_ = oprtr;
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
+                calculator.entryDisplay.Text = "" + entryVal1;
 
-                calculator.entryDisplay.Text = "" + entryVal1;    
+                Enter();
+                return calculator.operatorState;
             }
-            
-            Enter();
-            return calculator.operatorState;
-
         }
 
         public override State NextEntryState(Equals equals)
