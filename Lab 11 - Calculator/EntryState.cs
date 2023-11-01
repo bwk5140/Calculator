@@ -136,7 +136,8 @@ namespace Lab_11___Calculator
                 string delete;
                 delete = calculator.entryDisplay.Text.Remove(calculator.entryDisplay.Text.Length - 1);
                 entry = delete;
-                entryVal2 = double.Parse(entry);
+                double newValue;
+                entryVal2 = double.TryParse(entry, out newValue) ? newValue : 0;
 
                 calculator.division.Enabled = true;
                 calculator.reciprocal.Enabled = true;
