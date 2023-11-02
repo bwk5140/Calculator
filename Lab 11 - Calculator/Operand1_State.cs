@@ -28,7 +28,7 @@ namespace Lab_11___Calculator
             {
                 entry = "" + val;
             }
-            else
+            else if (val != '.' || !calculator.entryDisplay.Text.Contains("."))
             {
                 entry = calculator.entryDisplay.Text + val;
             }
