@@ -579,6 +579,9 @@ namespace Lab_11___Calculator
             this.Controls.Add(this.zero);
             this.Controls.Add(this.decimalPoint);
             this.Controls.Add(this.plusMinus);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(411, 509);
+            this.MinimumSize = new System.Drawing.Size(411, 509);
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.ResumeLayout(false);
