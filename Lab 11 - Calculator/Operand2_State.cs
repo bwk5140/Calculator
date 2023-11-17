@@ -6,10 +6,31 @@ namespace Lab_11___Calculator
     {
         public override State NextEntryState(char val)
         {
+            string input = calculator.entryDisplay.Text;
+
             if (calculator.entryDisplay.Text.Contains("Cannot divide by zero")
                 || calculator.entryDisplay.Text.Contains("Invalid input"))
             {
+                calculator.operandsDisplay.Text = "";
                 calculator.entryDisplay.Text = "";
+                calculator.division.Enabled = true;
+                calculator.division.BackColor = System.Drawing.Color.White;
+                calculator.reciprocal.Enabled = true;
+                calculator.reciprocal.BackColor = System.Drawing.Color.White;
+                calculator.square.Enabled = true;
+                calculator.square.BackColor = System.Drawing.Color.White;
+                calculator.squareRoot.Enabled = true;
+                calculator.squareRoot.BackColor = System.Drawing.Color.White;
+                calculator.multiplication.Enabled = true;
+                calculator.multiplication.BackColor = System.Drawing.Color.White;
+                calculator.addition.Enabled = true;
+                calculator.addition.BackColor = System.Drawing.Color.White;
+                calculator.subtraction.Enabled = true;
+                calculator.subtraction.BackColor = System.Drawing.Color.White;
+                calculator.plusMinus.Enabled = true;
+                calculator.plusMinus.BackColor = System.Drawing.Color.White;
+                calculator.decimalPoint.Enabled = true;
+                calculator.decimalPoint.BackColor = System.Drawing.Color.White;
             }
             if (entryVal2 == 0 && char.IsDigit(val) && 
                 !calculator.entryDisplay.Text.Contains("."))
@@ -18,12 +39,24 @@ namespace Lab_11___Calculator
             }
             else
             {
-                entry = calculator.entryDisplay.Text + val;
+                if (char.IsDigit(val))
+                {
+                    entry = calculator.entryDisplay.Text + val;
+                }
+                else
+                {
+                    if (!input.Contains("."))
+                    {
+                        entry = calculator.entryDisplay.Text + val;
+                    }
+                }
             }
             
             calculator.entryDisplay.Text = entry;
 
             entryVal2 = double.Parse(entry);
+            inputState = "Operand2_State";
+            unaryOperation = false;
 
             Enter();
 
@@ -33,7 +66,7 @@ namespace Lab_11___Calculator
         public override State NextEntryState(Operator oprtr)
         {
             Operator nextOperator = oprtr;
-            calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
+            //calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
 
             if (nextOperator == calculator.square_root)
             {
@@ -42,22 +75,32 @@ namespace Lab_11___Calculator
                 {
                     calculator.entryDisplay.Text = "Invalid input";
                     calculator.division.Enabled = false;
+                    calculator.division.BackColor = System.Drawing.Color.Transparent;
                     calculator.reciprocal.Enabled = false;
+                    calculator.reciprocal.BackColor = System.Drawing.Color.Transparent;
                     calculator.square.Enabled = false;
+                    calculator.square.BackColor = System.Drawing.Color.Transparent;
                     calculator.squareRoot.Enabled = false;
+                    calculator.squareRoot.BackColor = System.Drawing.Color.Transparent;
                     calculator.multiplication.Enabled = false;
+                    calculator.multiplication.BackColor = System.Drawing.Color.Transparent;
                     calculator.addition.Enabled = false;
+                    calculator.addition.BackColor = System.Drawing.Color.Transparent;
                     calculator.subtraction.Enabled = false;
+                    calculator.subtraction.BackColor = System.Drawing.Color.Transparent;
                     calculator.plusMinus.Enabled = false;
+                    calculator.plusMinus.BackColor = System.Drawing.Color.Transparent;
                     calculator.decimalPoint.Enabled = false;
+                    calculator.decimalPoint.BackColor = System.Drawing.Color.Transparent;
 
                     Enter();
-                    return calculator.operand1State;
+                    return this;
                 }
                 else
                 {
                     entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                     calculator.entryDisplay.Text = "" + entryVal2;
+                    unaryOperation = true;
 
                     Enter();
                     return this;
@@ -66,8 +109,9 @@ namespace Lab_11___Calculator
             else if (nextOperator == calculator.square_)
             {
                 calculator.operandsDisplay.Text += " (" + entryVal2 + ")" + nextOperator.getSymbol();
-                entryVal2 = nextOperator.Calculate(entryVal1, entryVal2);
+                entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                 calculator.entryDisplay.Text = "" + entryVal2;
+                unaryOperation = true;
 
                 Enter();
 
@@ -77,6 +121,7 @@ namespace Lab_11___Calculator
             {
                 entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                 calculator.entryDisplay.Text = "" + entryVal2;
+                unaryOperation = true;
 
                 Enter();
 
@@ -89,23 +134,33 @@ namespace Lab_11___Calculator
                     calculator.operandsDisplay.Text += " 1/(" + entryVal2 + ")";
                     calculator.entryDisplay.Text = "Cannot divide by zero";
                     calculator.division.Enabled = false;
+                    calculator.division.BackColor = System.Drawing.Color.Transparent;
                     calculator.reciprocal.Enabled = false;
+                    calculator.reciprocal.BackColor = System.Drawing.Color.Transparent;
                     calculator.square.Enabled = false;
+                    calculator.square.BackColor = System.Drawing.Color.Transparent;
                     calculator.squareRoot.Enabled = false;
+                    calculator.squareRoot.BackColor = System.Drawing.Color.Transparent;
                     calculator.multiplication.Enabled = false;
+                    calculator.multiplication.BackColor = System.Drawing.Color.Transparent;
                     calculator.addition.Enabled = false;
+                    calculator.addition.BackColor = System.Drawing.Color.Transparent;
                     calculator.subtraction.Enabled = false;
+                    calculator.subtraction.BackColor = System.Drawing.Color.Transparent;
                     calculator.plusMinus.Enabled = false;
+                    calculator.plusMinus.BackColor = System.Drawing.Color.Transparent;
                     calculator.decimalPoint.Enabled = false;
+                    calculator.decimalPoint.BackColor = System.Drawing.Color.Transparent;
 
                     Enter();
-                    return calculator.operand1State;
+                    return this;
                 }
                 else
                 {
                     calculator.operandsDisplay.Text += " 1/(" + entryVal2 + ")";
                     entryVal2 = nextOperator.Calculate(entryVal2, entryVal1);
                     calculator.entryDisplay.Text = "" + entryVal2;
+                    unaryOperation = true;
 
                     Enter();
 
@@ -121,14 +176,23 @@ namespace Lab_11___Calculator
                 entryVal1 = 0;
                 entryVal2 = 0;
                 calculator.division.Enabled = true;
+                calculator.division.BackColor = System.Drawing.Color.White;
                 calculator.reciprocal.Enabled = true;
+                calculator.reciprocal.BackColor = System.Drawing.Color.White;
                 calculator.square.Enabled = true;
+                calculator.square.BackColor = System.Drawing.Color.White;
                 calculator.squareRoot.Enabled = true;
+                calculator.squareRoot.BackColor = System.Drawing.Color.White;
                 calculator.multiplication.Enabled = true;
+                calculator.multiplication.BackColor = System.Drawing.Color.White;
                 calculator.addition.Enabled = true;
+                calculator.addition.BackColor = System.Drawing.Color.White;
                 calculator.subtraction.Enabled = true;
+                calculator.subtraction.BackColor = System.Drawing.Color.White;
                 calculator.plusMinus.Enabled = true;
+                calculator.plusMinus.BackColor = System.Drawing.Color.White;
                 calculator.decimalPoint.Enabled = true;
+                calculator.decimalPoint.BackColor = System.Drawing.Color.White;
 
                 Enter();
 
@@ -136,54 +200,108 @@ namespace Lab_11___Calculator
             }
             else if (nextOperator == calculator.clearEntryOperator)
             {
-                calculator.entryDisplay.Text = "0";
-                entry = "";
-                entryVal2 = 0;
-                calculator.division.Enabled = true;
-                calculator.reciprocal.Enabled = true;
-                calculator.square.Enabled = true;
-                calculator.squareRoot.Enabled = true;
-                calculator.multiplication.Enabled = true;
-                calculator.addition.Enabled = true;
-                calculator.subtraction.Enabled = true;
-                calculator.plusMinus.Enabled = true;
-                calculator.decimalPoint.Enabled = true;
-
+                if (calculator.entryDisplay.Text.Contains("Cannot divide by zero")
+                        || calculator.entryDisplay.Text.Contains("Invalid input"))
+                {
+                    calculator.operandsDisplay.Text = "";
+                    entryVal1 = 0;
+                    calculator.entryDisplay.Text = "0";
+                    entry = "";
+                    entryVal2 = 0;
+                    calculator.division.Enabled = true;
+                    calculator.division.BackColor = System.Drawing.Color.White;
+                    calculator.reciprocal.Enabled = true;
+                    calculator.reciprocal.BackColor = System.Drawing.Color.White;
+                    calculator.square.Enabled = true;
+                    calculator.square.BackColor = System.Drawing.Color.White;
+                    calculator.squareRoot.Enabled = true;
+                    calculator.squareRoot.BackColor = System.Drawing.Color.White;
+                    calculator.multiplication.Enabled = true;
+                    calculator.multiplication.BackColor = System.Drawing.Color.White;
+                    calculator.addition.Enabled = true;
+                    calculator.addition.BackColor = System.Drawing.Color.White;
+                    calculator.subtraction.Enabled = true;
+                    calculator.subtraction.BackColor = System.Drawing.Color.White;
+                    calculator.plusMinus.Enabled = true;
+                    calculator.plusMinus.BackColor = System.Drawing.Color.White;
+                    calculator.decimalPoint.Enabled = true;
+                    calculator.decimalPoint.BackColor = System.Drawing.Color.White;
+                    Enter();
+                    return calculator.operand1State;
+                }
+                else
+                {
+                    calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
+                    calculator.entryDisplay.Text = "0";
+                    entry = "";
+                    entryVal2 = 0;
+                    calculator.division.Enabled = true;
+                    calculator.division.BackColor = System.Drawing.Color.White;
+                    calculator.reciprocal.Enabled = true;
+                    calculator.reciprocal.BackColor = System.Drawing.Color.White;
+                    calculator.square.Enabled = true;
+                    calculator.square.BackColor = System.Drawing.Color.White;
+                    calculator.squareRoot.Enabled = true;
+                    calculator.squareRoot.BackColor = System.Drawing.Color.White;
+                    calculator.multiplication.Enabled = true;
+                    calculator.multiplication.BackColor = System.Drawing.Color.White;
+                    calculator.addition.Enabled = true;
+                    calculator.addition.BackColor = System.Drawing.Color.White;
+                    calculator.subtraction.Enabled = true;
+                    calculator.subtraction.BackColor = System.Drawing.Color.White;
+                    calculator.plusMinus.Enabled = true;
+                    calculator.plusMinus.BackColor = System.Drawing.Color.White;
+                    calculator.decimalPoint.Enabled = true;
+                    calculator.decimalPoint.BackColor = System.Drawing.Color.White;
+                }
                 Enter();
 
                 return calculator.operatorState;
             }
             else if (nextOperator == calculator.backspaceOperator)
             {
-                string delete;
-                delete = calculator.entryDisplay.Text.Remove(calculator.entryDisplay.Text.Length - 1);
-                entry = delete;
-
-                if (entryVal2 != entryVal1)
+                if (!unaryOperation)
                 {
+                    string delete;
+                    delete = calculator.entryDisplay.Text.Remove(calculator.entryDisplay.Text.Length - 1);
+                    entry = delete;
+
                     if (entry.Equals(""))
                     {
                         entryVal2 = 0;
+                        calculator.entryDisplay.Text = "" + entryVal2;
                     }
                     else if (calculator.entryDisplay.Text.Contains("Cannot divide by zero")
                         || calculator.entryDisplay.Text.Contains("Invalid input"))
                     {
                         calculator.operandsDisplay.Text = "";
+                        entryVal1 = 0;
                         entryVal2 = 0;
+                        calculator.entryDisplay.Text = "" + entryVal2;
                         calculator.division.Enabled = true;
+                        calculator.division.BackColor = System.Drawing.Color.White;
                         calculator.reciprocal.Enabled = true;
+                        calculator.reciprocal.BackColor = System.Drawing.Color.White;
                         calculator.square.Enabled = true;
+                        calculator.square.BackColor = System.Drawing.Color.White;
                         calculator.squareRoot.Enabled = true;
+                        calculator.squareRoot.BackColor = System.Drawing.Color.White;
                         calculator.multiplication.Enabled = true;
+                        calculator.multiplication.BackColor = System.Drawing.Color.White;
                         calculator.addition.Enabled = true;
+                        calculator.addition.BackColor = System.Drawing.Color.White;
                         calculator.subtraction.Enabled = true;
+                        calculator.subtraction.BackColor = System.Drawing.Color.White;
                         calculator.plusMinus.Enabled = true;
+                        calculator.plusMinus.BackColor = System.Drawing.Color.White;
                         calculator.decimalPoint.Enabled = true;
-
+                        calculator.decimalPoint.BackColor = System.Drawing.Color.White;
+                        Enter();
+                        return calculator.operand1State;
                     }
                     else
                     {
-                        if (entryVal2 - (int)entryVal2 == 0)
+                        if (entryVal2 - (int)entryVal2 == 0 && !entry.Contains(""))
                         {
 
                             entryVal2 = int.Parse(entry);
@@ -192,27 +310,38 @@ namespace Lab_11___Calculator
                         {
                             entryVal2 = double.Parse(entry);
                         }
+                        calculator.entryDisplay.Text = "" + entry;
                     }
+                    Enter();
                 }
-
-                calculator.entryDisplay.Text = "" + entryVal2;
-                Enter();
 
                 return this;
             }
             else if ((operator_ == calculator.divide && entryVal2 == 0))
             {
+                entryVal1 = 0;
+                entryVal2 = 0;
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "Cannot divide by zero";
                 calculator.division.Enabled = false;
+                calculator.division.BackColor = System.Drawing.Color.Transparent;
                 calculator.reciprocal.Enabled = false;
+                calculator.reciprocal.BackColor = System.Drawing.Color.Transparent;
                 calculator.square.Enabled = false;
+                calculator.square.BackColor = System.Drawing.Color.Transparent;
                 calculator.squareRoot.Enabled = false;
+                calculator.squareRoot.BackColor = System.Drawing.Color.Transparent;
                 calculator.multiplication.Enabled = false;
+                calculator.multiplication.BackColor = System.Drawing.Color.Transparent;
                 calculator.addition.Enabled = false;
+                calculator.addition.BackColor = System.Drawing.Color.Transparent;
                 calculator.subtraction.Enabled = false;
+                calculator.subtraction.BackColor = System.Drawing.Color.Transparent;
                 calculator.plusMinus.Enabled = false;
+                calculator.plusMinus.BackColor = System.Drawing.Color.Transparent;
                 calculator.decimalPoint.Enabled = false;
+                calculator.decimalPoint.BackColor = System.Drawing.Color.Transparent;
+                unaryOperation = false;
                 Enter();
 
                 return calculator.operand1State;
@@ -224,6 +353,7 @@ namespace Lab_11___Calculator
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "" + entryVal1;
                 entryVal2 = entryVal1;
+                unaryOperation = false;
 
                 Enter();
                 return calculator.operatorState;
@@ -233,6 +363,7 @@ namespace Lab_11___Calculator
         public override State NextEntryState(Equals equals)
         {
             calculator.prevState = this;
+            unaryOperation = false;
 
             if (operator_ == calculator.square_root)
             {
@@ -243,16 +374,23 @@ namespace Lab_11___Calculator
                 calculator.operandsDisplay.Text = entryVal1 + " " + operator_.getSymbol();
                 calculator.entryDisplay.Text = "Cannot divide by zero";
                 calculator.division.Enabled = false;
+                calculator.division.BackColor = System.Drawing.Color.Transparent;
                 calculator.reciprocal.Enabled = false;
+                calculator.reciprocal.BackColor = System.Drawing.Color.Transparent;
                 calculator.square.Enabled = false;
+                calculator.square.BackColor = System.Drawing.Color.Transparent;
                 calculator.squareRoot.Enabled = false;
+                calculator.squareRoot.BackColor = System.Drawing.Color.Transparent;
                 calculator.multiplication.Enabled = false;
+                calculator.multiplication.BackColor = System.Drawing.Color.Transparent;
                 calculator.addition.Enabled = false;
+                calculator.addition.BackColor = System.Drawing.Color.Transparent;
                 calculator.subtraction.Enabled = false;
+                calculator.subtraction.BackColor = System.Drawing.Color.Transparent;
                 calculator.plusMinus.Enabled = false;
+                calculator.plusMinus.BackColor = System.Drawing.Color.Transparent;
                 calculator.decimalPoint.Enabled = false;
-                Enter();
-                return calculator.operand1State;
+                calculator.decimalPoint.BackColor = System.Drawing.Color.Transparent;
             }
             else
             {

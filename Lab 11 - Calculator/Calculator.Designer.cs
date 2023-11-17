@@ -63,8 +63,9 @@ namespace Lab_11___Calculator
             // 
             this.plusMinus.AccessibleName = "blankButton";
             this.plusMinus.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.plusMinus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.plusMinus.BackColor = System.Drawing.SystemColors.Window;
+            this.plusMinus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.plusMinus.BackColor = System.Drawing.Color.White;
             this.plusMinus.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.plusMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.plusMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -84,7 +85,7 @@ namespace Lab_11___Calculator
             this.decimalPoint.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.decimalPoint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.decimalPoint.BackColor = System.Drawing.SystemColors.Window;
+            this.decimalPoint.BackColor = System.Drawing.Color.White;
             this.decimalPoint.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.decimalPoint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.decimalPoint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -104,7 +105,7 @@ namespace Lab_11___Calculator
             this.zero.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.zero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.zero.BackColor = System.Drawing.SystemColors.Window;
+            this.zero.BackColor = System.Drawing.Color.White;
             this.zero.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.zero.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.zero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -124,12 +125,13 @@ namespace Lab_11___Calculator
             this.equals.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.equals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.equals.BackColor = System.Drawing.SystemColors.Window;
+            this.equals.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.equals.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.equals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.equals.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.equals.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.equals.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equals.ForeColor = System.Drawing.SystemColors.ControlText;
             this.equals.Location = new System.Drawing.Point(299, 406);
             this.equals.Name = "equals";
             this.equals.Size = new System.Drawing.Size(92, 50);
@@ -144,7 +146,7 @@ namespace Lab_11___Calculator
             this.addition.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.addition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.addition.BackColor = System.Drawing.SystemColors.Window;
+            this.addition.BackColor = System.Drawing.Color.White;
             this.addition.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.addition.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -164,7 +166,7 @@ namespace Lab_11___Calculator
             this.subtraction.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.subtraction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.subtraction.BackColor = System.Drawing.SystemColors.Window;
+            this.subtraction.BackColor = System.Drawing.Color.White;
             this.subtraction.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.subtraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.subtraction.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -184,7 +186,7 @@ namespace Lab_11___Calculator
             this.multiplication.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.multiplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.multiplication.BackColor = System.Drawing.SystemColors.Window;
+            this.multiplication.BackColor = System.Drawing.Color.White;
             this.multiplication.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.multiplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.multiplication.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -204,7 +206,7 @@ namespace Lab_11___Calculator
             this.division.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.division.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.division.BackColor = System.Drawing.SystemColors.Window;
+            this.division.BackColor = System.Drawing.Color.White;
             this.division.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.division.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.division.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -245,7 +247,9 @@ namespace Lab_11___Calculator
             // 
             this.three.AccessibleName = "blankButton";
             this.three.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.three.BackColor = System.Drawing.SystemColors.Window;
+            this.three.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.three.BackColor = System.Drawing.Color.White;
             this.three.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.three.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.three.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -263,7 +267,9 @@ namespace Lab_11___Calculator
             // 
             this.six.AccessibleName = "blankButton";
             this.six.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.six.BackColor = System.Drawing.SystemColors.Window;
+            this.six.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.six.BackColor = System.Drawing.Color.White;
             this.six.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.six.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.six.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -281,7 +287,9 @@ namespace Lab_11___Calculator
             // 
             this.nine.AccessibleName = "blankButton";
             this.nine.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.nine.BackColor = System.Drawing.SystemColors.Window;
+            this.nine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nine.BackColor = System.Drawing.Color.White;
             this.nine.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.nine.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.nine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -299,7 +307,9 @@ namespace Lab_11___Calculator
             // 
             this.squareRoot.AccessibleName = "blankButton";
             this.squareRoot.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.squareRoot.BackColor = System.Drawing.SystemColors.Window;
+            this.squareRoot.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.squareRoot.BackColor = System.Drawing.Color.White;
             this.squareRoot.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.squareRoot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.squareRoot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -317,7 +327,9 @@ namespace Lab_11___Calculator
             // 
             this.two.AccessibleName = "blankButton";
             this.two.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.two.BackColor = System.Drawing.SystemColors.Window;
+            this.two.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.two.BackColor = System.Drawing.Color.White;
             this.two.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.two.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.two.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -335,7 +347,9 @@ namespace Lab_11___Calculator
             // 
             this.five.AccessibleName = "blankButton";
             this.five.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.five.BackColor = System.Drawing.SystemColors.Window;
+            this.five.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.five.BackColor = System.Drawing.Color.White;
             this.five.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.five.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.five.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -353,7 +367,9 @@ namespace Lab_11___Calculator
             // 
             this.eight.AccessibleName = "blankButton";
             this.eight.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.eight.BackColor = System.Drawing.SystemColors.Window;
+            this.eight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eight.BackColor = System.Drawing.Color.White;
             this.eight.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.eight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.eight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -371,7 +387,9 @@ namespace Lab_11___Calculator
             // 
             this.square.AccessibleName = "blankButton";
             this.square.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.square.BackColor = System.Drawing.SystemColors.Window;
+            this.square.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.square.BackColor = System.Drawing.Color.White;
             this.square.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.square.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.square.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -389,7 +407,9 @@ namespace Lab_11___Calculator
             // 
             this.one.AccessibleName = "blankButton";
             this.one.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.one.BackColor = System.Drawing.SystemColors.Window;
+            this.one.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.one.BackColor = System.Drawing.Color.White;
             this.one.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.one.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.one.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -407,7 +427,9 @@ namespace Lab_11___Calculator
             // 
             this.four.AccessibleName = "blankButton";
             this.four.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.four.BackColor = System.Drawing.SystemColors.Window;
+            this.four.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.four.BackColor = System.Drawing.Color.White;
             this.four.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.four.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.four.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -425,7 +447,9 @@ namespace Lab_11___Calculator
             // 
             this.seven.AccessibleName = "blankButton";
             this.seven.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.seven.BackColor = System.Drawing.SystemColors.Window;
+            this.seven.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.seven.BackColor = System.Drawing.Color.White;
             this.seven.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.seven.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.seven.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -443,6 +467,8 @@ namespace Lab_11___Calculator
             // 
             this.reciprocal.AccessibleName = "blankButton";
             this.reciprocal.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.reciprocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reciprocal.BackColor = System.Drawing.Color.White;
             this.reciprocal.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.reciprocal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -463,7 +489,9 @@ namespace Lab_11___Calculator
             // 
             this.clearAll.AccessibleName = "blankButton";
             this.clearAll.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.clearAll.BackColor = System.Drawing.SystemColors.Window;
+            this.clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearAll.BackColor = System.Drawing.Color.White;
             this.clearAll.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.clearAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -481,6 +509,8 @@ namespace Lab_11___Calculator
             // 
             this.entryDisplay.AccessibleName = "blankButton";
             this.entryDisplay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.entryDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.entryDisplay.BackColor = System.Drawing.SystemColors.Control;
             this.entryDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.entryDisplay.Font = new System.Drawing.Font("Times New Roman", 22.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -498,6 +528,8 @@ namespace Lab_11___Calculator
             // 
             this.operandsDisplay.AccessibleName = "blankButton";
             this.operandsDisplay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.operandsDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.operandsDisplay.BackColor = System.Drawing.SystemColors.Control;
             this.operandsDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.operandsDisplay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -513,8 +545,9 @@ namespace Lab_11___Calculator
             // 
             this.emptyButton1.AccessibleName = "blankButton";
             this.emptyButton1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.emptyButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.emptyButton1.BackColor = System.Drawing.SystemColors.Window;
+            this.emptyButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.emptyButton1.BackColor = System.Drawing.Color.Transparent;
             this.emptyButton1.Enabled = false;
             this.emptyButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.emptyButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -531,7 +564,9 @@ namespace Lab_11___Calculator
             // 
             this.clearEntry.AccessibleName = "blankButton";
             this.clearEntry.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.clearEntry.BackColor = System.Drawing.SystemColors.Window;
+            this.clearEntry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clearEntry.BackColor = System.Drawing.Color.White;
             this.clearEntry.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.clearEntry.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.clearEntry.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
@@ -549,7 +584,6 @@ namespace Lab_11___Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(393, 462);
