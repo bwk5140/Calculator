@@ -58,8 +58,8 @@ jobs:
     env:
       Solution_Name: Lab 11 - Calculator.sln                                                              # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: Lab 11 - Calculator.Tests\Lab 11 - Calculator.Tests.csproj                       # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: Lab 11 - Calculator.Package    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: Lab 11 - Calculator.Package\Lab 11 - Calculator.Package.wapproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Directory: Lab 11 - Calculator.Lab 11 - Calculator    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: Lab 11 - Calculator.Lab 11 - Calculator\Lab 11 - Calculator.Lab 11 - Calculator.wapproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
